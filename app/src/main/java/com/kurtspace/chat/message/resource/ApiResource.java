@@ -24,13 +24,7 @@ import lombok.Data;
 public class ApiResource {
 
     private static final List<Message> messages = new ArrayList<>();
-    private UsersClient usersClient;
     
-    @Inject
-    public ApiResource(UsersClient usersClient) {
-        this.usersClient = usersClient;
-    }
-
     @GET
     @Path("/ping")
     public String ping() {
@@ -50,14 +44,8 @@ public class ApiResource {
     @POST
     @Consumes("application/json")
     public void sendMessage(Message message) {
-        message.setTo(getRecipients(message));
         message.setSent(LocalDateTime.now());
         messages.add(message);
-    }
-
-    private List<Integer> getRecipients(Message message) {
-        List<User> users = usersClient.getUsers();
-        return users.stream().filter(u -> message.message.contains("@" + u.getName())).map(u -> u.getSub()).collect(Collectors.toList());
     }
 
     @Data
