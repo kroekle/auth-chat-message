@@ -38,7 +38,5 @@ public class UsersClient {
         private String name;
         private String[] roles;
         private boolean active;
-        private Boolean blocking;
-        private Boolean blocked;
     }
 }
