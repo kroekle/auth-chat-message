@@ -18,9 +18,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Response;
 
-import com.google.common.collect.Sets;
-import com.google.inject.Inject;
-
 import lombok.Data;
 
 
@@ -29,10 +26,6 @@ public class ApiResource {
 
     private static final List<Message> messages = new ArrayList<>();
     
-    @Inject
-    public ApiResource() {
-    }
-
     @GET
     @Path("/ping")
     public String ping() {
