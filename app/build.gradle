@@ -30,6 +30,9 @@ dependencies {
 
 }
 
+targetCompatibility=11
+sourceCompatibility=11
+
 jib {
 	from {
 		image = 'gcr.io/distroless/java:11'
