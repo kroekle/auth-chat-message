@@ -24,7 +24,7 @@ public class MessageModule extends AbstractModule {
     private static final class MyWebConfig extends WebConfig {
         @Override
         public int getPort() {
-            return 8778;
+            return 8777;
         }
     }
 

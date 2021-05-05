@@ -17,7 +17,7 @@ repositories {
     jcenter()
 }
 
-var artifactTag = '0.1.0'
+var artifactTag = 'v3-0'
 
 dependencies {
     // Use JUnit test framework.
